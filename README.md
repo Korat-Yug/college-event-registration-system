@@ -34,7 +34,7 @@ https://code.visualstudio.com/
 Follow these steps to run the application locally.
 
 
-# 1️⃣ Clone the Repository
+## 1️. Clone the Repository
 
 Open Command Prompt and run:
 
@@ -48,7 +48,7 @@ Navigate into project folder:
 cd college-event-registration-system
 ```
 
-# 2️⃣ Install Required Dependencies
+## 2️. Install Required Dependencies
 
 Run:
 
@@ -56,7 +56,7 @@ Run:
 pip install flask mysql-connector-python
 ```
 
-# 3️⃣ Database Setup (MySQL)
+## 3️. Database Setup (MySQL)
 
 Open **MySQL Workbench**
 
@@ -81,7 +81,7 @@ Alternatively, run the provided setup file:
 SOURCE database.sql;
 ```
 
-# 4️⃣ Configure Database Connection
+## 4️. Configure Database Connection
 
 Inside project folder locate:
 
@@ -108,7 +108,7 @@ db_config = {
 
 Save the file.
 
-# 5️⃣ Start Backend Server
+## 5️. Start Backend Server
 
 Run:
 
@@ -122,7 +122,7 @@ Server will start at:
 http://127.0.0.1:5000
 ```
 
-# 6️⃣ Open Application in Browser
+## 6️. Open Application in Browser
 
 Open:
 
