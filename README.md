@@ -15,9 +15,9 @@ Download Python:
 https://www.python.org/downloads/
 
 Verify installation:
-
+'''bash
 python --version
-
+'''
 ---
 
 ### 2. MySQL Server
@@ -49,9 +49,9 @@ Download Git:
 https://git-scm.com/download/win
 
 Verify installation:
-
+'''bash
 git --version
-
+'''
 ---
 
 ### 5. VS Code (Recommended)
@@ -72,7 +72,7 @@ Follow these steps to run the application locally.
 
 Open Command Prompt and run:
 
-git clone https://github.com/YOUR_USERNAME/college-event-registration-system.git
+git clone https://github.com/Korat-Yug/college-event-registration-system.git
 
 Move into project folder:
 
@@ -83,9 +83,9 @@ cd college-event-registration-system
 # 2️⃣ Install Required Python Libraries
 
 Run:
-
+'''bash
 pip install flask mysql-connector-python
-
+'''
 This installs backend dependencies required for the application.
 
 ---
@@ -95,7 +95,7 @@ This installs backend dependencies required for the application.
 Open **MySQL Workbench**
 
 Create a new query and run:
-
+'''sql
 CREATE DATABASE IF NOT EXISTS college_events;
 
 USE college_events;
@@ -106,11 +106,11 @@ full_name VARCHAR(100) NOT NULL,
 event_name VARCHAR(100) NOT NULL,
 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
+'''
 Alternatively, run the provided setup file:
-
+'''
 SOURCE database.sql;
-
+'''
 ---
 
 # 4️⃣ Configure Database Connection
@@ -124,14 +124,14 @@ Rename it to:
 config.py
 
 Update database password:
-
+'''python
 DB_CONFIG = {
 "host": "localhost",
 "user": "root",
 "password": "YOUR_MYSQL_PASSWORD",
 "database": "college_events"
 }
-
+'''
 Save the file.
 
 ---
@@ -139,9 +139,9 @@ Save the file.
 # 5️⃣ Start Backend Server
 
 Run:
-
+'''bash
 python app.py
-
+'''
 Server will start at:
 
 http://127.0.0.1:5000
@@ -167,18 +167,6 @@ Open MySQL Workbench and run:
 SELECT * FROM college_events.registrations;
 
 You should see submitted records.
-
----
-
-# ✨ Features
-
-* Student event registration form
-* MySQL database integration
-* Animated success popup notification
-* Loading spinner during submission
-* Responsive modern UI
-* Beginner-friendly setup
-* Cloud deployment ready architecture
 
 ---
 
