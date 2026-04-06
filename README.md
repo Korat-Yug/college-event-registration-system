@@ -1,10 +1,6 @@
 # 🎓 College Event Registration System
 
-Simple full-stack event registration web application built using a **Python Flask backend** and **MySQL database** with a modern HTML, CSS, and JavaScript frontend.
-
-This application allows students to register for events like **Tech Fest**, **Cultural Events**, and **Workshops**, and stores registration data securely inside a MySQL database.
-
----
+Simple full-stack event registration web application built using a **Python backend** and **MySQL database** with a modern HTML, CSS, and JavaScript frontend.
 
 # 🛠 Required Software
 
@@ -33,20 +29,17 @@ https://git-scm.com/download/win
 VS Code (Recommended)
 https://code.visualstudio.com/
 
----
-
 # 🚀 Getting Started
 
 Follow these steps to run the application locally.
 
----
 
 # 1️⃣ Clone the Repository
 
 Open Command Prompt and run:
 
 ```
-git clone https://github.com/YOUR_USERNAME/college-event-registration-system.git
+git clone https://github.com/Korat-Yug/college-event-registration-system.git
 ```
 
 Navigate into project folder:
@@ -55,8 +48,6 @@ Navigate into project folder:
 cd college-event-registration-system
 ```
 
----
-
 # 2️⃣ Install Required Dependencies
 
 Run:
@@ -64,8 +55,6 @@ Run:
 ```
 pip install flask mysql-connector-python
 ```
-
----
 
 # 3️⃣ Database Setup (MySQL)
 
@@ -91,8 +80,6 @@ Alternatively, run the provided setup file:
 ```sql
 SOURCE database.sql;
 ```
-
----
 
 # 4️⃣ Configure Database Connection
 
@@ -121,8 +108,6 @@ db_config = {
 
 Save the file.
 
----
-
 # 5️⃣ Start Backend Server
 
 Run:
@@ -137,8 +122,6 @@ Server will start at:
 http://127.0.0.1:5000
 ```
 
----
-
 # 6️⃣ Open Application in Browser
 
 Open:
@@ -151,8 +134,6 @@ Fill the registration form and submit.
 
 Data will be stored in the MySQL database.
 
----
-
 # 📊 Verify Stored Data
 
 Open MySQL Workbench and run:
@@ -162,8 +143,6 @@ SELECT * FROM college_events.registrations;
 ```
 
 You should see submitted entries.
-
----
 
 # 📁 Project Structure
 
@@ -183,8 +162,6 @@ example_config.py
 README.md
 ```
 
----
-
 # ⚙ How the Application Works
 
 ```
@@ -198,5 +175,3 @@ Data stored in MySQL database
         ↓
 Success popup displayed
 ```
-
----
