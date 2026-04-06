@@ -1,6 +1,8 @@
 # 🎓 College Event Registration System
 
-A full-stack student event registration web application built using **Python**, **MySQL**, **HTML**, **CSS**, and **JavaScript**.
+Simple full-stack event registration web application built using a **Python Flask backend** and **MySQL database** with a modern HTML, CSS, and JavaScript frontend.
+
+This application allows students to register for events like **Tech Fest**, **Cultural Events**, and **Workshops**, and stores registration data securely inside a MySQL database.
 
 ---
 
@@ -8,56 +10,27 @@ A full-stack student event registration web application built using **Python**, 
 
 Before running the application, ensure the following software is installed on your system:
 
-### 1. Python
-
-Download Python:
-
-https://www.python.org/downloads/
-
-Verify installation:
-'''bash
-python --version
-'''
----
-
-### 2. MySQL Server
-
-Download MySQL Community Installer:
-
+MySQL Database
 https://dev.mysql.com/downloads/installer/
 
-During installation:
-
-Remember your **root password**
-
----
-
-### 3. MySQL Workbench
-
-Download MySQL Workbench:
-
+MySQL Workbench
 https://dev.mysql.com/downloads/workbench/
 
-Used to manage databases visually.
+Python
+https://www.python.org/downloads/
 
----
-
-### 4. Git
-
-Download Git:
-
-https://git-scm.com/download/win
+pip (comes with Python)
 
 Verify installation:
-'''bash
-git --version
-'''
----
 
-### 5. VS Code (Recommended)
+```
+python -m ensurepip --upgrade
+```
 
-Download Visual Studio Code:
+Git
+https://git-scm.com/download/win
 
+VS Code (Recommended)
 https://code.visualstudio.com/
 
 ---
@@ -72,21 +45,25 @@ Follow these steps to run the application locally.
 
 Open Command Prompt and run:
 
-git clone https://github.com/Korat-Yug/college-event-registration-system.git
+```
+git clone https://github.com/YOUR_USERNAME/college-event-registration-system.git
+```
 
-Move into project folder:
+Navigate into project folder:
 
+```
 cd college-event-registration-system
+```
 
 ---
 
-# 2️⃣ Install Required Python Libraries
+# 2️⃣ Install Required Dependencies
 
 Run:
-'''bash
+
+```
 pip install flask mysql-connector-python
-'''
-This installs backend dependencies required for the application.
+```
 
 ---
 
@@ -95,43 +72,53 @@ This installs backend dependencies required for the application.
 Open **MySQL Workbench**
 
 Create a new query and run:
-'''sql
+
+```sql
 CREATE DATABASE IF NOT EXISTS college_events;
 
 USE college_events;
 
 CREATE TABLE registrations (
-id INT AUTO_INCREMENT PRIMARY KEY,
-full_name VARCHAR(100) NOT NULL,
-event_name VARCHAR(100) NOT NULL,
-timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    event_name VARCHAR(100) NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-'''
+```
+
 Alternatively, run the provided setup file:
-'''
+
+```sql
 SOURCE database.sql;
-'''
+```
+
 ---
 
 # 4️⃣ Configure Database Connection
 
 Inside project folder locate:
 
+```
 example_config.py
+```
 
 Rename it to:
 
+```
 config.py
+```
 
-Update database password:
-'''python
-DB_CONFIG = {
-"host": "localhost",
-"user": "root",
-"password": "YOUR_MYSQL_PASSWORD",
-"database": "college_events"
+Then update your MySQL password inside the file:
+
+```python
+db_config = {
+    "host": "localhost",
+    "user": "root",
+    "password": "YOUR_MYSQL_PASSWORD",
+    "database": "college_events"
 }
-'''
+```
+
 Save the file.
 
 ---
@@ -139,24 +126,30 @@ Save the file.
 # 5️⃣ Start Backend Server
 
 Run:
-'''bash
+
+```
 python app.py
-'''
+```
+
 Server will start at:
 
+```
 http://127.0.0.1:5000
+```
 
 ---
 
 # 6️⃣ Open Application in Browser
 
-Visit:
+Open:
 
+```
 http://127.0.0.1:5000
+```
 
 Fill the registration form and submit.
 
-Data will be stored in MySQL database.
+Data will be stored in the MySQL database.
 
 ---
 
@@ -164,54 +157,46 @@ Data will be stored in MySQL database.
 
 Open MySQL Workbench and run:
 
+```sql
 SELECT * FROM college_events.registrations;
+```
 
-You should see submitted records.
+You should see submitted entries.
 
 ---
 
 # 📁 Project Structure
 
+```
 college-event-registration-system/
 
-app.py → Flask backend server
+static/
+    style.css
+    script.js
 
-example_config.py → Database configuration template
+templates/
+    index.html
 
-database.sql → Database setup script
-
-README.md → Project documentation
-
-/templates
-
-index.html → Registration page UI
-
-/static
-
-style.css → Styling file
-
-script.js → Frontend logic and API communication
+app.py
+database.sql
+example_config.py
+README.md
+```
 
 ---
 
 # ⚙ How the Application Works
 
+```
 User fills registration form
-
-↓
-
-JavaScript sends POST request to Flask server
-
-↓
-
-Flask processes request
-
-↓
-
-Data stored inside MySQL database
-
-↓
-
-Success popup displayed to user
+        ↓
+Frontend sends POST request
+        ↓
+Flask backend receives request
+        ↓
+Data stored in MySQL database
+        ↓
+Success popup displayed
+```
 
 ---
